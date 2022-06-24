@@ -22,6 +22,7 @@ class EditableField extends React.Component {
           placeholder={this.props.cellData.placeholder}
           min={this.props.cellData.min}
           name={this.props.cellData.name}
+          // sku={this.props.cellData.sku}
           id={this.props.cellData.id}
           value={this.props.cellData.value}
           step={this.props.cellData.step}

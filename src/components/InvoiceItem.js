@@ -21,16 +21,16 @@ class InvoiceItem extends React.Component {
           <thead>
             <tr>
               <th>ITEM</th>
-              <th>QTY</th>
-              <th>PRICE/RATE</th>
-              <th className="text-center">ACTION</th>
+              <th>QTD</th>
+              <th>Preço</th>
+              <th className="text-center">Ação</th>
             </tr>
           </thead>
           <tbody>
             {itemTable}
           </tbody>
         </Table>
-        <Button className="fw-bold" onClick={this.props.onRowAdd}>Add Item</Button>
+        <Button className="fw-bold" onClick={this.props.onRowAdd}>Adicionar Item</Button>
       </div>
     );
 
@@ -50,7 +50,7 @@ class ItemRow extends React.Component {
             cellData={{
             type: "text",
             name: "name",
-            placeholder: "Item name",
+            placeholder: "Nome do Item",
             value: this.props.item.name,
             id: this.props.item.id,
           }}/>
@@ -59,8 +59,17 @@ class ItemRow extends React.Component {
             cellData={{
             type: "text",
             name: "description",
-            placeholder: "Item description",
+            placeholder: "Descrição do Item",
             value: this.props.item.description,
+            id: this.props.item.id
+          }}/>
+          <EditableField
+            onItemizedItemEdit={this.props.onItemizedItemEdit}
+            cellData={{
+            type: "text",
+            name: "sku",
+            placeholder: "Referência/SKU do Item",
+            value: this.props.item.sku,
             id: this.props.item.id
           }}/>
         </td>
